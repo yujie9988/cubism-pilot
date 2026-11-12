@@ -1,0 +1,55 @@
+{
+  "_comment": "Config used for the 'mythbreaker' avatar (3584x4800 canvas). Reproduces mythbreaker_cubism_v6.psd from the hand-split PSD.",
+
+  "reshape": {
+    "center_x": 1850,
+    "crown_bottom": 1720,
+    "crown_blend": 420,
+    "hair_top": 670,
+    "cut": 230,
+    "crown_narrow": 0.10,
+    "face_narrow": 0.07,
+    "face_fade": [2600, 3150],
+    "side_narrow": 0.25,
+    "side_blend": [480, 920],
+    "skip": ["neck", "body", "collar_front"]
+  },
+
+  "mouth": {
+    "layers": ["mouth_inner", "mouth_tongue", "mouth_teeth", "mouth_lower", "mouth_upper"],
+    "center": [1840, 2770],
+    "scale": 0.65
+  },
+
+  "back_fill": {
+    "layer": "hair_back",
+    "cover": ["face", "hair_front", "hair_side_L", "hair_side_R", "hair_front_shadow"],
+    "inset": 6,
+    "interior": 25
+  },
+
+  "groups": [
+    ["hair_back_grp", ["hair_back"]],
+    ["body", ["body", "neck", "collar_front"]],
+    ["face", ["face", "hair_front_shadow"]],
+    ["nose", ["nose"]],
+    ["eye_R", ["eye_white_R", ["eyeball_R", ["iris_R"]], "lash_lower_R", "lash_upper_R", "eye_close_R"]],
+    ["eye_L", ["eye_white_L", ["eyeball_L", ["iris_L"]], "lash_lower_L", "lash_upper_L", "eye_close_L"]],
+    ["mouth", ["mouth_inner", "mouth_tongue", "mouth_teeth", "mouth_lower", "mouth_upper", "mouth_close"]],
+    ["hair_front_grp", ["hair_front", "hair_ahoge", "hair_side_R", "hair_side_L"]],
+    ["brow_R", ["brow_R"]],
+    ["brow_L", ["brow_L"]],
+    ["hair_clip", ["hair_clip_R", "hair_clip_L"]]
+  ],
+
+  "preview_hide": ["mouth_upper", "mouth_lower", "mouth_teeth", "mouth_tongue", "mouth_inner", "eye_close_L", "eye_close_R"],
+
+  "physics": [
+    {"name": "front hair", "output": "ParamHairFront", "scale": 1.522, "length": 3, "delay": 0.9},
+    {"name": "back hair",  "output": "ParamHairBack",  "scale": 2.061, "length": 15, "delay": 0.8, "angle_range": 30},
+    {"name": "side hair",  "output": "ParamHairSide",  "scale": 3.0,   "length": 3, "delay": 0.9}
+  ],
+
+  "eye_blink": ["ParamEyeLOpen", "ParamEyeROpen"],
+  "lip_sync": ["ParamMouthOpenY"]
+}
