@@ -1,0 +1,5 @@
+Bundled third-party code
+
+_vendor/psd_tools: psd-tools 1.26.1, MIT License
+https://github.com/psd-tools/psd-tools
+License text: _vendor/psd_tools-1.26.1.dist-info/licenses/LICENSE
