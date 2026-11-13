@@ -15,7 +15,7 @@
 | `_vendor/` | 內附 `psd-tools` 1.26.1 |
 | `examples/mythbreaker.json` | 完整設定檔範例（3584×4800 畫布） |
 | `requirements.txt` | Python 相依套件 |
-| `AI_GUIDE.md` | 選用：給用 `cubism_gui.mjs` 操作 Cubism Editor 的 AI 參考的操作方法與已知問題（英文） |
+| `AI_GUIDE.md` | 選用，程式不會讀取：給透過 `cubism_gui.mjs` 操作 Cubism Editor 的 AI 參考（英文，見 [AI_GUIDE.md（選用）](#ai_guidemd選用)） |
 
 ## 需求
 
@@ -123,6 +123,17 @@ node cubism_gui.mjs click 1200 700            # 視窗內座標
 node cubism_gui.mjs key cmd+s
 node cubism_gui.mjs text "model name" --paste
 ```
+
+### AI_GUIDE.md（選用）
+
+| | |
+|---|---|
+| 必要嗎 | 不必要。步驟 1–7 與所有程式都不需要它，也沒有程式會讀取它。 |
+| 給誰 | 用 `cubism_gui.mjs` 幫你操作 Cubism Editor 的 AI 程式助理（Claude Code、Codex、Cursor 等） |
+| 不需要的情況 | 自己手動綁定；只用 `make_psd.py`／`finalize_export.py`／`pack.py` |
+| 用法 | 交代任務時一起給 AI，例如「先讀 tools/cubism-pilot/AI_GUIDE.md，再到 Cubism 綁定張嘴」 |
+| 內容 | 1 操作循環（截圖 → 操作 → 截圖）· 2 Cubism 以外的視窗 · 3 常見問題與解法 · 4 綁定步驟與選單路徑（英文／簡體中文介面）· 5 Cubism 以外的檢查 |
+| 限制 | 以 Cubism Editor 5.3、macOS、簡體中文介面寫成；裡面的座標是範例，不是固定位置 |
 
 ## 參考
 

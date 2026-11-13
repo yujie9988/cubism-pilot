@@ -15,7 +15,7 @@ Layered PSD → Cubism-ready PSD → (rig in Cubism Editor) → runtime files �
 | `_vendor/` | bundled `psd-tools` 1.26.1 |
 | `examples/mythbreaker.json` | full config example (3584×4800 canvas) |
 | `requirements.txt` | Python dependencies |
-| `AI_GUIDE.md` | optional: operating notes and known pitfalls for AI agents driving Cubism Editor with `cubism_gui.mjs` |
+| `AI_GUIDE.md` | optional, not used by any script: reference for an AI agent that drives Cubism Editor through `cubism_gui.mjs` (see [AI_GUIDE.md (optional)](#ai_guidemd-optional)) |
 
 ## Requirements
 
@@ -123,6 +123,17 @@ node cubism_gui.mjs click 1200 700            # window-relative point
 node cubism_gui.mjs key cmd+s
 node cubism_gui.mjs text "model name" --paste
 ```
+
+### AI_GUIDE.md (optional)
+
+| | |
+|---|---|
+| Needed? | No. Steps 1–7 and every script work without it. No script reads it. |
+| For | AI coding agents (Claude Code, Codex, Cursor, …) that operate Cubism Editor for you with `cubism_gui.mjs` |
+| Not for | rigging by hand; using `make_psd.py` / `finalize_export.py` / `pack.py` only |
+| Use | give the file to the agent with the task, e.g. "Read tools/cubism-pilot/AI_GUIDE.md, then rig mouth open/close in Cubism" |
+| Contents | 1 control loop (shot → act → shot) · 2 windows outside Cubism · 3 pitfalls with fixes · 4 rigging recipe with menu paths (English / 简体中文 UI) · 5 checks outside Cubism |
+| Limits | written on Cubism Editor 5.3, macOS, Simplified-Chinese UI; coordinates in it are examples, not fixed positions |
 
 ## Reference
 

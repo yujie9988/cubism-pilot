@@ -1,6 +1,7 @@
 # cubism-pilot — AI_GUIDE.md
 
 Optional reference for an AI agent that drives Live2D Cubism Editor 5.x on macOS through `cubism_gui.mjs`.
+Not required by any script and not read by any script; humans rigging by hand can skip it.
 Written from a real session (Cubism Editor 5.3, Simplified-Chinese UI, PRO trial). Menu names are given as
 English / 简体中文 because the UI language varies.
 
@@ -49,6 +50,10 @@ Java buttons are often not addressable by name through AppleScript; raise the di
 | ArtMesh ID is `nose2`, `face2` | a part (PSD group) has the same name | use the real ID shown in the Inspector when typing clipping IDs |
 | Faint ghost of the big open mouth / eyelid when the parameter is near its closed key | key 0 had opacity 0 but the full-size shape | give the closed key the same squashed shape as the next key (e.g. 0 = 0.1 shape), not only opacity 0 |
 | Iris still visible when eyes closed | a clipping mask with opacity 0 still masks | squash the eye-white mask flat at the closed key |
+| Opacity typed into a deformer's "Division" field, keys added to the wrong object | a list click selected a deformer (tree rows shift after reloads/expands); Inspector field rows differ between ArtMesh and deformer | shot the Inspector name field before every edit; select ArtMeshes from the Parts panel; if the wrong object was edited, close without saving and reopen (undo labels are not exposed) |
+| New layers missing from the export texture | layers added by PSD replace are listed as unplaced in the texture atlas; *Auto layout* only re-packs placed meshes | atlas dialog menu *Texture → Initialize texture atlas* / 纹理 → 初始化纹理集, recreate 2048×2048 |
+| A sliver of iris shows under a new expression line | a thick line used to hide the squashed iris; the new layer hides that line | key the opacity of the iris's parent warp deformer on EyeOpen (0 → 0 %, 0.2 and 1 → 100 %); 3 keys instead of a grid on the iris mesh. A face-coloured patch in the line layer also works but slides off the face on head turns |
+| Part opacity field greyed out | 5.3 enables part opacity only with *Offscreen drawing* (a 5.3 feature; avoid it when exporting for SDK 5.0) | put opacity on a deformer or the meshes instead |
 | Background shows behind the face when turning | back hair transparent where the face covered it | `make_psd.py` `back_fill` |
 | Parts cut off after `make_psd.py` reshape | (fixed) output box did not grow with moved content | — |
 
